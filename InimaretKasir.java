@@ -6,7 +6,7 @@ public class InimaretKasir {
         Scanner input = new Scanner(System.in);
 
         //array hanya utk 5 barang
-        String[] namabarang = {null, null, null, null, null};
+        String[]  namabarang = {null, null, null, null, null};
         int[] harga = {0, 0, 0, 0, 0};
         int[] jumlah  = {0, 0, 0, 0, 0};
         int[] subtotal = {0, 0, 0, 0, 0};
