@@ -32,10 +32,10 @@ public class latihanpercabangan {
         //transaksi belanja
         String namaBarang="";
         double Harga=0.0, Jumlah=0.0, Total=0.0, Diskon=0.0, GrandTotal=0.0;
-
+        double PersenDiskon = 0.0;
         //ditanyakan dulu mau daftar member atau tidak. sdh masuk kondiai percabangan
         //berikan teks input
-        System.out.print ("Apakah ingin mendaftar member? (Y/T)");
+        System.out.print ("Apakah ingin mendaftar member? (Y/T): ");
         jawab = scanner.nextLine();
 
         // cek jawaban user, apakah jawabannya Y atau T menggunakan IF. jwb adlh variabel yg hrs diisi
@@ -52,37 +52,44 @@ public class latihanpercabangan {
             System.out.print("no hp anda: ");
             NoHp = scanner.nextLine();
 
-            System.out.print("ingin lanjut berbelanja? (/T)");
+            System.out.print("ingin lanjut berbelanja? (Y/T): ");
             jawab = scanner.nextLine();
+
             if (jawab.equalsIgnoreCase("y")) {
-            System.out.print("nama barang: ");
-            namaBarang = scanner.nextLine();
-            System.out.print(" harga: ");
-            Harga = scanner.nextDouble();
-            System.out.print("jumlah: ");
-            Jumlah = scanner.nextDouble();
+                System.out.print("nama barang: ");
+                namaBarang = scanner.nextLine();
+                System.out.print(" harga: ");
+                Harga = scanner.nextDouble();
+                System.out.print("jumlah: ");
+                Jumlah = scanner.nextDouble();
+                
+                System.out.println();
+                Total = Harga * Jumlah;
 
-            System.out.println();
-
-            Total = Harga * Jumlah;
-            System.out.println("total:" + Total);
             //hitung diskon
-            if (Total > 100000.0) {
-                Diskon = Total + 0.05 * 0.01;   
-            } else if (Total > 300000.0) {
-                Diskon = Total * 0.1 * 0.02;
+            if (Total > 300000.0) {
+                PersenDiskon = 0.10 * 0.02;   
+            } else if (Total > 100000.0) {
+                PersenDiskon = 0.05;
+            } else {
+                PersenDiskon = 0.0; 
             }
-        // komen = blok + ctrl + garing
-        // if (jawab.equals("y") || jawab.equals("y")) (
-            //contoh: jwb = Y/y
-            //jwb Y
-            
+
+            Diskon = Total * PersenDiskon;
+            GrandTotal = Total - Diskon;
+
+            System.out.println ("struk pembayaran");
+            System.out.println("Nama barang: " + namaBarang);
+            System.out.println("Total belanja: Rp " + Total);
+            System.out.println("+Persen diskon: " + (PersenDiskon * 100) + "%");
+            System.out.println("Diskon: " + Diskon);
+            System.out.println("Grand Total: " + GrandTotal);
+
         } else {
-            //(jwb T)
             System.out.println("selamat berbelanja");
-
         }
-
     }
+
+    scanner.close();
 }
 }
