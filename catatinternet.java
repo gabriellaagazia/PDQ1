@@ -1,6 +1,4 @@
 /* 
-tolong buatkan program java dari soal 3 yang memeiliki ketentuan:
-array 1 dimensi, percabangan if/switch (menyesuaikan soal), loop for
 soal 3:
 buatlah sebuah program untuk mencatat penggunaan internet harian. User perlu
 mengisi jumlah hari pemakaian terlebih dahulu yang disimpan dalam sebuah variabel (minimal 7 hari)
